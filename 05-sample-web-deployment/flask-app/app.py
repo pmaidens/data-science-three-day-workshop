@@ -49,4 +49,11 @@ def mnist():
 #    (this will require you to import sklearn and restore the model!)
 @app.route('/fish', methods=["POST", "GET"])
 def fish():
-    pass
+    if request.method == 'GET':
+        return render_template('fish_input.html')
+
+    fish_height = request.body.height
+    fish_length = request.body.length
+    fish_species = request.body.species
+    
+    digit, conf = 
